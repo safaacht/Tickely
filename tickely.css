@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+header{
+    font-size: 3rem;
+    left: 1rem;
+    top: 1rem;
+    margin: 5px 6px;
+    
+}
+
+header h4{
+     background: linear-gradient(to right, #102A44, #385979,#71A1C0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+}
+
+.my-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.my-body .stepper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;  
+    position: relative;
+    
+}
+
+.stepper .circle {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 500;
+    height: 50px;
+    width: 50px;
+    border: 4px solid #e0e0e0;
+    border-radius: 50%;
+    background-color:#73AAF6 ;
+}
+
+.stepper .circle.active{
+    border-color: rgb(186, 196, 200);
+}
+
+.stepper .progress{
+    position:absolute;
+    height: 4px;
+    width: 100%;
+    background: #73AAF6;
+    z-index: -1;
+}
+
+.progress .indicator{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background:  #73AAF6;;
+}
+
+ #next{
+    background:#73AAF6 ;
+    border-radius: 10px;
+    padding: 8px 20px;
+    position: absolute;
+    left: 10rem;
+    margin-top: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.events{
+    background: #DDF2F3;
+    width: 250px;
+    height: 100%;
+    border-radius: 40px;
+    padding: 1rem ;
+    gap: 4px;
+}
+.event-container{
+    background: #446C94;
+    border-radius: 1rem;
+    display: flex;
+    position: relative;
+    gap: 40px; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+}
+
+.places-res{
+    display: flex;
+    position: absolute;
+    right: 7%;
+    margin-top: 40%;
+    
+    
+}
+
+.image img{
+    border-radius: 18px;
+    width: 100px;
+    height: 150px;
+    position: relative;
+    top: 1%;
+    left: 1%;
+}
+
+
+
+
+@media(min-width:601px){
+
+
+.my-body{
+    width: 50%;   
+
+}
+.my-body .stepper{
+    left: 50%;
+}
+
+.events{
+    display: grid;
+}
+/* .events{
+    background: #DDF2F3;
+    width: 50rem;
+    height: 25rem;
+    border-radius: 40px;
+    padding: 1rem ;
+    margin-left: 4rem;
+}
+.event-container{
+    background: #446C94;
+    display: grid;
+} */
+
+}
+ 
