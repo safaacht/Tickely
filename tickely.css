@@ -26,21 +26,30 @@ header h4{
     gap: 40px;
 }
 
-.my-body .stepper{
+
+
+.stepper{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;  
-    position: relative;
+    justify-content: space-around;
+    width: 70%;  
+    /* position: relative; */
+    margin: 2rem auto;
     
 }
 
-.stepper .circle {
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
     
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 500;
     height: 50px;
     width: 50px;
@@ -49,8 +58,14 @@ header h4{
     background-color:#73AAF6 ;
 }
 
-.stepper .circle.active{
-    border-color: rgb(186, 196, 200);
+.stepper p{
+    color: rgb(7, 53, 71);
+    
+}
+
+.circle.active{
+    border-color: rgb(7, 53, 71);
+    display: flex;
 }
 
 .stepper .progress{
@@ -68,50 +83,59 @@ header h4{
     background:  #73AAF6;;
 }
 
+
+
  #next{
     background:#73AAF6 ;
     border-radius: 10px;
     padding: 8px 20px;
-    position: absolute;
-    left: 10rem;
-    margin-top: 1px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
     cursor: pointer;
 }
 
+
 .events{
     background: #DDF2F3;
-    width: 250px;
+    width: 210px;
     height: 100%;
     border-radius: 40px;
-    padding: 1rem ;
+    padding: 2rem  2rem;
     gap: 4px;
+    margin-top: 2rem;
+    
 }
-.event-container{
+
+#event-container{
     background: #446C94;
     border-radius: 1rem;
     display: flex;
     position: relative;
-    gap: 40px; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease;
+    box-shadow: 0 2px 5px rgb(36, 150, 203);
+    cursor: pointer;
+    
+    
 
 }
 
 .infos {
   display: flex;
   flex-direction: column;
+  
 }
 
 .places-res{
     display: flex;
     position: absolute;
     right: 7%;
-    margin-top: 40%;
+    margin-top: 40%; 
     
-    
+}
+
+.steps{
+    display: none;
 }
 
 .image img{
@@ -128,7 +152,22 @@ header h4{
     grid-auto-flow: column;
     grid-template-columns: repeat(2);
     gap: 2px;
+    margin-top: 4rem;       /* !!!!!!!!!!!!! */      
 }
+.image1 img{
+    position: relative;
+    border-radius: 16px;
+    left: 2rem;
+}
+.conteursPlaces-res{
+    display: flex;
+    position: absolute;
+    background: #446C94;
+    border-radius: 3px;
+    padding: 10px 5px;
+    left: 3rem;
+}
+
 
  #precedent{
     background:#73AAF6 ;
@@ -136,14 +175,13 @@ header h4{
     padding: 8px 15px;
     position: absolute;
     left: 1rem;
-    margin-top: 1px;
+    margin-top: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
 }
 @media(min-width:601px){
-
 
 .my-body{
     width: 50%;   
@@ -155,19 +193,46 @@ header h4{
 
 .events{
     display: grid;
-}
-/* .events{
-    background: #DDF2F3;
     width: 50rem;
     height: 25rem;
-    border-radius: 40px;
     padding: 1rem ;
-    margin-left: 4rem;
+    margin-left: 10rem;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    place-items: center;
+    
 }
-.event-container{
+
+#event-container{
     background: #446C94;
     display: grid;
-} */
+    grid-auto-flow: column;
+    gap: 20px;
+} 
 
+.infos{
+    justify-content: center;
+    align-items: flex-start;  
+    
+}
+.places-res{
+    bottom: 1rem;
+
+}
+
+.all-content{
+    display: grid;
+    grid-template-columns: 35% 35% 35%;
+    place-items:center ;
+    margin-left: 32rem;
+}
+
+ #next{
+    justify-content:flex-start;
+    left: 52rem;
+ }
+ #precedent{
+    left: 10rem;
+ }
 }
  
