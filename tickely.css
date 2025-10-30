@@ -74,7 +74,7 @@ header h4{
     padding: 8px 20px;
     position: absolute;
     left: 10rem;
-    margin-top: .5rem;
+    margin-top: 1px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,9 +123,25 @@ header h4{
     left: 1%;
 }
 
+.content{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(2);
+    gap: 2px;
+}
 
-
-
+ #precedent{
+    background:#73AAF6 ;
+    border-radius: 10px;
+    padding: 8px 15px;
+    position: absolute;
+    left: 1rem;
+    margin-top: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
 @media(min-width:601px){
 
 
