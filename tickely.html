@@ -25,9 +25,7 @@
                     <span class="circle">4</span>
                     <p>Confirmation</p>
             </div>
-              <div class="progress">
-                    <span class="indicator"></span>
-                </div>
+
         </div>
 
         <div class="events">
@@ -121,7 +119,7 @@
                      <p>Choix</p>
                </div>
              <div class="step">
-                    <span class="circle">2</span>
+                    <span class="circle active">2</span>
                     <p>Billet</p>
              </div>
             <div class="step">
@@ -134,6 +132,8 @@
             </div>
         </div>
 
+
+        <div class="events">
             <div class="image1">
                 <div><img src="party crowd background.jpg" alt="image" width="200" height="300"></div>
                 <div class="conteursPlaces-res"> <p> XXX Places restantes</p></div>
@@ -146,12 +146,63 @@
                 <p>jjjjjj</p>
             </div>
         </div>
-        <div class="step1" style="display: none;"></div>
+        </div>
                 <div class="buttons">
-                 <button id="precedent" >Precedent</button>  
+                   <button id="precedent" >Precedent</button> 
+                </div>
                 <div class="buttons" >
                 <button id="next">Suivant</button> 
+                  </div>
+                
         </section>  
+
+
+          <!-- ======3ème page======= -->
+
+            <section id="step3" class="steps">
+                        <div class="stepper">
+               <div class="step">
+                     <span class="circle active">1</span>
+                     <p>Choix</p>
+               </div>
+             <div class="step">
+                    <span class="circle active">2</span>
+                    <p>Billet</p>
+             </div>
+            <div class="step">
+                   <span class="circle active">3</span>
+                   <p>Achat</p>
+            </div>
+            <div class="step">
+                    <span class="circle">4</span>
+                    <p>Confirmation</p>
+            </div>
+
+        </div>
+
+        <div class="events">
+          <div class="form-container">
+            <div id="my-form" class="form">
+                <!-- <div class="counter">Participant :</div> -->
+                <form action="">
+                <label for="name">Nom &nbsp</label>
+                <input type="text" id="name" name="name"><br>
+                <label for="pseudo">Prénom </label>
+                <input type="text" id="prenom" name="prenom"><br>
+                <label for="email">Email &nbsp </label>
+                <input type="email" id="email" name="email"  placeholder="xxxxx@gmail.com"><br>  
+                <label for="phone">Tél &nbsp</label>  
+                <input type="tel" id="phone" name="phone" placeholder="06 00 00 00 00">      
+                <input type="submit" id="submit" value="Envoyer" >          
+                </form>
+             
+            </div>
+            <div class="form-data"></div>
+        </div>
+        </div>
+
+            </section>
+
         
 
     </body>
