@@ -1,4 +1,31 @@
+  // Bouton Next
+const btnNext = document.getElementById('next');
 
+btnNext.addEventListener('click', function() {
+  const next = document.getElementById('step2');
+  const current = document.getElementById('etape1');
+  console.log(next);
+
+  current.style.display = "none";  
+  next.style.display = "block";    
+});
+
+//  Boutton Precedent
+
+const btnPrecedent=document.getElementById('precedent');
+btnPrecedent.addEventListener('click', function(){
+    const precedent = document.getElementById('etape1');
+  const current = document.getElementById('step2');
+  console.log(precedent);
+
+  current.style.display = "none";  
+  precedent.style.display = "block";  
+})
+
+
+
+
+//=========== étape1===========
 
 function handleClick() {
     console.log("function activated");
@@ -7,7 +34,31 @@ function handleClick() {
     carte.style.border = "2px solid blue";
 }
 
+// ==========etape2===============
 
+const countSpan = document.getElementById('count');
+const incrementBtn = document.getElementById('increment-btn');
+const decrementBtn = document.getElementById('decrement-btn');
+
+let count = 1;
+
+// modification du compteur
+function increment() {
+  count++;
+  countSpan.textContent = count; 
+}
+
+function decrement() {
+  count--;
+  countSpan.textContent = count; 
+}
+
+
+incrementBtn.addEventListener('click', increment);
+decrementBtn.addEventListener('click', decrement);
+
+
+// ============etape3=================
 function message_errors(select,message){
     document.querySelector(select).innerHTML=message;
 }
@@ -20,9 +71,8 @@ form.addEventListener("submit",(e)=>{
     const regtel=/^0[ \-]?(6|7)[ \-]?\d{2}[ \-]?\d{2}[ \-]?\d{2}[ \-]?\d{2}$/;
     const email=form.querySelector('#email').value;
     const name=form.getElementById('#name');
-    const prenom=form.getElementById('#prenom');
-    const phone=form.getElementById('#phone');
-    // the same thing for all the inputs
+    const prenom=form.getElementById('#prenom').value;
+    const phone=form.getElementById('#phone').value;
 
 
     if(name.value.trim()==''){ 
@@ -59,7 +109,7 @@ form.addEventListener("submit",(e)=>{
     message.style.color = "red";
   }
 
-  
+
 const afficher=document.querySelector('.affichage');
     afficher.innerHTML +=`
     <div> <ul>
