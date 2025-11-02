@@ -28,7 +28,7 @@
 
         </div>
 
-        <div class="events">
+        <div  id="etape1" class="events">
           <div class="all-content">
             <button class="clicked-div">
             <div  id="event-container" class="step1" >
@@ -106,7 +106,7 @@
         </div>
         </div>
         <div class="buttons">
-                <button id="next">Réserver</button>
+                <button class="next">Réserver</button>
         </div> 
         
         
@@ -145,13 +145,17 @@
                 <p>jjjjjj</p>
                 <p>jjjjjj</p>
             </div>
-        </div>
+             <div class="counter-container">
+                 <button id="decrement-btn">-</button>
+                 <span id="count">1</span>
+                 <button id="increment-btn">+</button>
+            </div>
         </div>
                 <div class="buttons">
-                   <button id="precedent" >Precedent</button> 
+                   <button class="precedent" >Precedent</button> 
                 </div>
                 <div class="buttons" >
-                <button id="next">Suivant</button> 
+                <button class="next">Suivant</button> 
                   </div>
                 
         </section>  
@@ -182,27 +186,63 @@
 
         <div class="events">
           <div class="form-container">
+            <div class="counter">Participant :</div>
             <div id="my-form" class="form">
-                <!-- <div class="counter">Participant :</div> -->
                 <form action="">
-                <label for="name">Nom &nbsp</label>
-                <input type="text" id="name" name="name"><br>
-                <label for="pseudo">Prénom </label>
-                <input type="text" id="prenom" name="prenom"><br>
-                <label for="email">Email &nbsp </label>
-                <input type="email" id="email" name="email"  placeholder="xxxxx@gmail.com"><br>  
-                <label for="phone">Tél &nbsp</label>  
+                <label for="name">&nbspNom &nbsp &nbsp&nbsp&nbsp</label>
+                <input type="text" id="name" name="name">
+                <label for="pseudo">&nbspPrénom &nbsp </label>
+                <input type="text" id="prenom" name="prenom">
+                <label for="email">&nbspEmail &nbsp&nbsp&nbsp&nbsp </label>
+                <input type="email" id="email" name="email"  placeholder="xxxxx@gmail.com">
+                <label for="phone">&nbspTél &nbsp &nbsp &nbsp &nbsp</label>  
                 <input type="tel" id="phone" name="phone" placeholder="06 00 00 00 00">      
                 <input type="submit" id="submit" value="Envoyer" >          
                 </form>
-             
             </div>
-            <div class="form-data"></div>
-        </div>
+
         </div>
 
+        <div class="form-data"></div>
+        </div>
+                <div class="buttons">
+                   <button class="precedent" >Precedent</button> 
+                </div>
+                <div class="buttons" >
+                <button class="next">Suivant</button> 
+                  </div>
+                
             </section>
 
+
+          <!-- ======4ème etap======= -->
+           <section id="step4" class="hidden">
+                        <div class="stepper">
+               <div class="step">
+                     <span class="circle active">1</span>
+                     <p>Choix</p>
+               </div>
+             <div class="step">
+                    <span class="circle active">2</span>
+                    <p>Billet</p>
+             </div>
+            <div class="step">
+                   <span class="circle active">3</span>
+                   <p>Achat</p>
+            </div>
+            <div class="step">
+                    <span class="circle active">4</span>
+                    <p>Confirmation</p>
+            </div>
+        </div>
+                              <div class="buttons">
+                   <button class="precedent" >Precedent</button> 
+                </div>
+                <div class="buttons" >
+                <button class="next">Confirmer</button> 
+                  </div>
+                
+           </section>
         
 
     </body>
