@@ -1,29 +1,48 @@
-  // Bouton Next
-const btnNext = document.getElementById('next');
+// Stepper
+const steps = [
+  document.getElementById("etape1"),
+  document.getElementById("step2"),
+  document.getElementById("step3"),
+  document.getElementById("step4"),
+  document.getElementById("step5")
+];
 
-btnNext.addEventListener('click', function() {
-  const next = document.getElementById('step2');
-  const current = document.getElementById('etape1');
-  console.log(next);
+let currentStep = 0;
 
-  current.style.display = "none";  
-  next.style.display = "block";    
-});
+function showStep(index) {
+  steps.forEach((step, i) => {
+    step.style.display = i === index ? "block" : "none";
+  });
+  currentStep = index;
+}
+
+
+
+
+// Bouton Next
+const btnNext = document.querySelectorAll(".next");
+
+btnNext.forEach(btn=> {
+  btn.addEventListener("click",()=>{
+    if (currentStep<steps.length-1){
+      showStep(currentStep+1);
+    }
+  })  
+})
 
 //  Boutton Precedent
 
-const btnPrecedent=document.getElementById('precedent');
-btnPrecedent.addEventListener('click', function(){
-    const precedent = document.getElementById('etape1');
-  const current = document.getElementById('step2');
-  console.log(precedent);
+const btnPrecedent=document.querySelectorAll(".precedent");
 
-  current.style.display = "none";  
-  precedent.style.display = "block";  
+btnPrecedent.forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    if(currentStep>0){
+      showStep(currentStep-1);
+    }
+  })
 })
 
-
-
+showStep(0)
 
 //=========== étape1===========
 
@@ -67,7 +86,7 @@ const form=document.getElementById("my-form")
 form.addEventListener("submit",(e)=>{
     e.preventDefault();  
     // pour qu'il n'envoie pas les infos invalid au backend
-    const regex=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const regex=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/;
     const regtel=/^0[ \-]?(6|7)[ \-]?\d{2}[ \-]?\d{2}[ \-]?\d{2}[ \-]?\d{2}$/;
     const email=form.querySelector('#email').value;
     const name=form.getElementById('#name');
@@ -121,4 +140,5 @@ const afficher=document.querySelector('.affichage');
 /div>`
 
 })
+
 
