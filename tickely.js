@@ -46,12 +46,13 @@ showStep(0)
 
 //=========== étape1===========
 
-function handleClick() {
-    console.log("function activated");
-    const carte = document.getElementById("event-container");
-    console.log(carte);
-    carte.style.border = "2px solid blue";
-}
+const eventCards = document.querySelectorAll(".clicked-div");
+eventCards.forEach(card => {
+  card.addEventListener("click", () => {
+    eventCards.forEach(c => c.classList.remove("selected"));
+    card.classList.add("selected");
+  });
+});
 
 // ==========etape2===============
 
@@ -88,13 +89,13 @@ form.addEventListener("submit",(e)=>{
     // pour qu'il n'envoie pas les infos invalid au backend
     const regex=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/;
     const regtel=/^0[ \-]?(6|7)[ \-]?\d{2}[ \-]?\d{2}[ \-]?\d{2}[ \-]?\d{2}$/;
-    const email=form.querySelector('#email').value;
-    const name=form.getElementById('#name');
-    const prenom=form.getElementById('#prenom').value;
-    const phone=form.getElementById('#phone').value;
+    const email=form.querySelector('email').value;
+    const name=form.getElementById('name');
+    const prenom=form.getElementById('prenom').value;
+    const phone=form.getElementById('phone').value;
 
 
-    if(name.value.trim()==''){ 
+    if(name.value.trim()===""){ 
         // alert("N'est pas valide!!!")
         name.style.border=" 2px solid red"
         message_errors("Nom n'est pas valide")
@@ -103,7 +104,7 @@ form.addEventListener("submit",(e)=>{
     }
 
 
-    if(prenom.value.trim()==''){ 
+    if(prenom.trim()===""){ 
         // alert("N'est pas valide!!!")
         prenom.style.border=" 2px solid red"
         message_errors("Prenom n'est pas valide")
@@ -128,7 +129,8 @@ form.addEventListener("submit",(e)=>{
     message.style.color = "red";
   }
 
-
+  alert("Participant ajouté ✅");
+  form.reset();
 const afficher=document.querySelector('.affichage');
     afficher.innerHTML +=`
     <div> <ul>
