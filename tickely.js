@@ -145,7 +145,7 @@ form.addEventListener("submit",(e)=>{
  
 const afficher=document.querySelector('.affichage');
     afficher.innerHTML +=`
-    <div> <ul>
+    <div class=infos> <ul>
     <li> Nom:${name.value}</li>
     <li>Prenom:${prenom.value}</li>
     <li> Email:${email.value}</li>
