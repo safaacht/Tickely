@@ -9,12 +9,23 @@ const steps = [
 
 let currentStep = 0;
 
+const firstStepper=document.querySelector("body>.stepper");
+
 function showStep(index) {
   steps.forEach((step, i) => {
     step.style.display = i === index ? "block" : "none";
   });
+
+  if(index===0){
+    firstStepper.style.display="flex";
+  }
+  else{
+    firstStepper.style.display="none";
+  }
+
   currentStep = index;
 }
+
 
 
 
@@ -51,6 +62,7 @@ eventCards.forEach(card => {
   card.addEventListener("click", () => {
     eventCards.forEach(c => c.classList.remove("selected"));
     card.classList.add("selected");
+
   });
 });
 
@@ -89,7 +101,7 @@ form.addEventListener("submit",(e)=>{
     // pour qu'il n'envoie pas les infos invalid au backend
     const regex=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/;
     const regtel=/^0[ \-]?(6|7)[ \-]?\d{2}[ \-]?\d{2}[ \-]?\d{2}[ \-]?\d{2}$/;
-    const email=form.querySelector('email').value;
+    const email=form.getElementById('email').value;
     const name=form.getElementById('name');
     const prenom=form.getElementById('prenom').value;
     const phone=form.getElementById('phone').value;
@@ -125,22 +137,31 @@ form.addEventListener("submit",(e)=>{
      }
 
       if (!name || !email || !prenom|| !phone) {
-    message.textContent = "Veuillez remplir tous les champs.";
+    message.textContent = "Veuillez remplir tous les champs!!";
     message.style.color = "red";
+    return;
   }
 
-  alert("Participant ajouté ✅");
-  form.reset();
+ 
 const afficher=document.querySelector('.affichage');
     afficher.innerHTML +=`
     <div> <ul>
-    <li> Nom:${nom.value}</li>
+    <li> Nom:${name.value}</li>
     <li>Prenom:${prenom.value}</li>
     <li> Email:${email.value}</li>
     <li> Tel:${phone.value}</li>
 </ul>
-/div>`
+</div>`;
+ alert("Participant ajouté ✅");
+  form.reset();
 
 })
 
 
+// ============etape5=================
+const confirmBtn = document.getElementById("confirmBtn");
+const confirmMessage = document.getElementById("message");
+
+confirmBtn.addEventListener("click", () => {
+  confirmMessage.textContent = "Réservation confirmée 🎉";
+});
